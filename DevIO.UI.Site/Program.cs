@@ -13,6 +13,8 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+app.UseStaticFiles();
+
 //Adicionando a rota padrão
 app.MapControllerRoute(
     "default", "{controller=Home}/{action=Index}/{id?}");
