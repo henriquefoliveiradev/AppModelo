@@ -41,6 +41,13 @@
         "css/all.css",
         "js/all.js"
       ]
+    },
+    {
+      "library": "favico.js@0.3.10",
+      "destination": "wwwroot/lib/favico.js/",
+      "files": [
+        "favico.js"
+      ]
     }
   ]
 }
