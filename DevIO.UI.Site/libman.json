@@ -4,7 +4,7 @@
   "libraries": [
     {
       "library": "jquery@3.6.4",
-      "destination": "wwwroot/lib/",
+      "destination": "wwwroot/lib/jquery/",
       "files": [
         "jquery.js"
       ]
@@ -14,7 +14,9 @@
       "destination": "wwwroot/lib/jquery-validate/",
       "files": [
         "jquery.validate.js",
-        "additional-methods.js"
+        "additional-methods.js",
+        "localization/messages_pt_BR.js",
+        "localization/methods_pt.js"
       ]
     },
     {
@@ -25,6 +27,21 @@
       ]
     },
     {
+      "library": "font-awesome@6.4.0",
+      "destination": "wwwroot/lib/font-awesome/",
+      "files": [
+        "css/fontawesome.css",
+        "webfonts/fa-v4compatibility.woff2",
+        "webfonts/fa-v4compatibility.ttf",
+        "webfonts/fa-solid-900.woff2",
+        "webfonts/fa-solid-900.ttf",
+        "webfonts/fa-regular-400.woff2",
+        "webfonts/fa-regular-400.ttf",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-brands-400.ttf"
+      ]
+    },
+    {
       "library": "bootstrap@5.2.3",
       "destination": "wwwroot/lib/bootstrap/",
       "files": [
@@ -32,21 +49,6 @@
         "css/bootstrap-grid.css",
         "css/bootstrap-reboot.css",
         "css/bootstrap.css"
-      ]
-    },
-    {
-      "library": "font-awesome@6.4.0",
-      "destination": "wwwroot/lib/font-awesome/",
-      "files": [
-        "css/all.css",
-        "js/all.js"
-      ]
-    },
-    {
-      "library": "favico.js@0.3.10",
-      "destination": "wwwroot/lib/favico.js/",
-      "files": [
-        "favico.js"
       ]
     }
   ]
