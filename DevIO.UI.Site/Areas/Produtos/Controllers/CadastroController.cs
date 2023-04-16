@@ -9,5 +9,10 @@ namespace DevIO.UI.Site.Areas.Produtos.Controllers
         {
             return View();
         }
+
+        public IActionResult Busca()
+        {
+            return View();
+        }
     }
 }
