@@ -15,9 +15,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 
-//Adicionando a rota padrão
-app.MapControllerRoute(
-    "default", "{controller=Home}/{action=Index}/{id?}");
+// Adicionando suporte a rota
+app.UseRouting();
+
+// Rota de área genérica
+app.MapControllerRoute("areas", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+// Rota padrão
+app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 //Colocando a app para mamar, ops, rodar
 app.Run();
