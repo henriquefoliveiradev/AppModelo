@@ -1,5 +1,7 @@
 // Builder principal é dele de onde tudo deriva
 using DevIO.UI.Site.Data;
+using DevIO.UI.Site.Interfaces;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Build.Evaluation;
 
@@ -17,6 +19,9 @@ var builder = WebApplication.CreateBuilder(args);
 //});
 
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
+builder.Services.AddTransient<IOperationTransient, DevIO.UI.Site.Data.Operation>();
+builder.Services.AddScoped<IOperationScoped,  DevIO.UI.Site.Data.Operation>();
+builder.Services.AddSingleton<IOperationSingleton, DevIO.UI.Site.Data.Operation>();
 
 // Adicionando suporte ao MVC
 builder.Services.AddControllersWithViews();
@@ -37,6 +42,8 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
+app.UseMyMiddleware();
 // Adicionando suporte a rota
 app.UseRouting();
 
