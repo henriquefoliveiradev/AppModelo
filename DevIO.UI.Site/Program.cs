@@ -1,5 +1,7 @@
 // Builder principal é dele de onde tudo deriva
+using DevIO.UI.Site.Data;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Build.Evaluation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 //    options.AreaViewLocationFormats.Add("/Modulos/{2}/Views/Shared/{0}.cshtml");
 //    options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
 //});
+
+builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
 
 // Adicionando suporte ao MVC
 builder.Services.AddControllersWithViews();
