@@ -4,6 +4,7 @@ using DevIO.UI.Site.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Build.Evaluation;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ var builder = WebApplication.CreateBuilder(args);
 //    options.AreaViewLocationFormats.Add("/Modulos/{2}/Views/Shared/{0}.cshtml");
 //    options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
 //});
+
+builder.Services.AddDbContext<MeuDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MeuDbContext")));
 
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
 builder.Services.AddTransient<IOperationTransient, DevIO.UI.Site.Data.Operation>();
