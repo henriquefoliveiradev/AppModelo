@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DevIO.UI.Site.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevIO.UI.Site.Data
 {
@@ -7,7 +8,9 @@ namespace DevIO.UI.Site.Data
         public MeuDbContext(DbContextOptions options)
         : base(options)
         {
-
+            
         }
+
+        public DbSet<Aluno> Alunos { get; set; }
     }
 }
